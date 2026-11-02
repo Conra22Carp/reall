@@ -214,8 +214,13 @@ npm run smoke
 
 `npm run smoke` arranca la app compilada con un estado temporal y comprueba por
 HTTP las páginas, la sesión local, el ejemplo y que un segundo worker sea rechazado.
+`npm run typecheck` compila primero los paquetes internos y genera los tipos de
+Next (`next typegen`), así funciona también en un clon recién descargado.
+
 El workflow [`reall-studio.yml`](../.github/workflows/reall-studio.yml) corre todo
-esto en Linux en cada push o PR que toque `studio/`, cuando Actions está habilitado en el repositorio.
+esto en Linux en cada push o PR que toque `studio/`. Es el único workflow activo en
+este fork: los heredados de REA están desactivados porque sus chequeos asumen el
+repositorio original. Sus archivos se conservan y se reactivan con `gh workflow enable <archivo>`.
 
 Las pruebas incluyen cifrado, migración de datos anteriores, carpetas de
 proyectos, presupuestos, tarifas/caché y un flujo con REA real y modelo simulado.

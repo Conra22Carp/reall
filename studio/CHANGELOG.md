@@ -3,6 +3,18 @@
 Registro de la capa Reall (`studio/`). Los cambios del motor REA están en el
 [CHANGELOG de upstream](../CHANGELOG.md).
 
+## Sin publicar
+
+### Correcciones
+
+- `npm run typecheck` funciona desde un clon limpio: primero compila los paquetes
+  internos y genera los tipos de Next con `next typegen`. Antes fallaba en el CI,
+  donde no había nada compilado, y el workflow de Studio nunca pasó de ese paso
+  ([#2](https://github.com/Conra22Carp/reall/issues/2)).
+- En el fork solo queda activo el workflow `Reall Studio`. Los 34 workflows
+  heredados de REA se desactivaron sin borrar sus archivos: sus chequeos asumen el
+  repositorio original y el CI programado fallaba varias veces por día.
+
 ## 1.0.0 · 2026-10-29
 
 Primera versión estable de Reall. Resuelve los pendientes de la v0 y suma cinco

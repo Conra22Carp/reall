@@ -17,7 +17,7 @@
   "scripts": {
     "build:libs": "npm run build -w @rea-studio/core -w @rea-studio/agent -w @rea-studio/worker",
     "build": "npm run build:libs && npm run build -w @rea-studio/web",
-    "typecheck": "npm run typecheck --workspaces --if-present",
+    "typecheck": "npm run build:libs && npm run typecheck --workspaces --if-present",
     "test": "vitest run",
     "studio": "node scripts/studio.mjs",
     "dev": "node scripts/studio.mjs --dev",
